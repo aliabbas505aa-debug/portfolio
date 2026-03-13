@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abbas Ali | Portfolio</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        
+        body {
+            background: radial-gradient(circle at top, #1e293b 0%, #020617 100%);
+            color: #f8fafc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(56, 189, 248, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(56, 189, 248, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(56, 189, 248, 0); }
+        }
+
+        .glass-card {
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            border-radius: 40px;
+            padding: 50px 30px;
+            max-width: 550px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.8);
+            animation: slideUp 0.8s ease-out;
+        }
+
+        .profile-img {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            border: 4px solid #38bdf8;
+            margin-bottom: 25px;
+            object-fit: cover;
+            box-shadow: 0 0 25px rgba(56, 189, 248, 0.4);
+        }
+
+        h1 { font-size: 2.8rem; letter-spacing: -1px; margin-bottom: 5px; background: linear-gradient(to right, #38bdf8, #818cf8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .degree { color: #94a3b8; font-size: 1rem; margin-bottom: 5px; font-weight: 300; }
+        .location { color: #38bdf8; font-size: 0.85rem; margin-bottom: 30px; display: block; }
+
+        .section-title { text-align: left; font-size: 1rem; color: #f8fafc; margin: 25px 0 15px 0; text-transform: uppercase; letter-spacing: 2px; border-bottom: 1px solid rgba(56, 189, 248, 0.2); display: inline-block; padding-bottom: 5px; }
+
+        .skill-container { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+        .skill-tag {
+            background: rgba(56, 189, 248, 0.05);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            color: #38bdf8;
+            padding: 6px 18px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+        }
+
+        .social-icons { margin-top: 35px; display: flex; justify-content: center; gap: 20px; }
+        .social-icons a { color: #f8fafc; text-decoration: none; font-size: 0.9rem; font-weight: 600; padding: 12px 25px; border-radius: 12px; background: rgba(255,255,255,0.05); transition: 0.3s; border: 1px solid transparent; }
+        
+        /* The WhatsApp Button Highlight */
+        .btn-whatsapp { 
+            background: rgba(56, 189, 248, 0.1) !important; 
+            border-color: #38bdf8 !important; 
+            animation: pulse 2s infinite;
+        }
+        
+        .social-icons a:hover { border-color: #38bdf8; color: #38bdf8; transform: translateY(-3px); }
+
+        #clock { margin-top: 30px; color: #475569; font-size: 0.75rem; font-family: monospace; }
+    </style>
+</head>
+<body>
+
+    <div class="glass-card">
+        <img src="my pic.jpeg" alt="Abbas Ali" class="profile-img">
+
+        <h1>Abbas Ali</h1>
+        <p class="degree">Bachelor in Computer Science (Ongoing)</p>
+        <span class="location">📍 Parachinar, KPK, Pakistan</span>
+
+        <div class="section-title">Technical Expertise</div>
+        <div class="skill-container">
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">SQL</span>
+            <span class="skill-tag">Power BI</span>
+            <span class="skill-tag">Analytical Thinking</span>
+        </div>
+
+        <div class="section-title">Communication</div>
+        <div class="skill-container">
+            <span class="skill-tag">Advanced English</span>
+            <span class="skill-tag">Business Understanding</span>
+        </div>
+
+        <div class="social-icons">
+            <a href="https://www.linkedin.com/in/abbas-ali-26643439b" target="_blank">LinkedIn</a>
+            <a href="https://wa.me/923091900515?text=Hi%20Abbas!%20I’m%20impressed%20by%20your%20portfolio.%20Can%20we%20talk%20about%20a%20potential%20project?" 
+               class="btn-whatsapp" target="_blank">WhatsApp</a>
+        </div>
+
+        <div id="clock"></div>
+    </div>
+
+    <script>
+        function updateClock() {
+            const now = new Date();
+            document.getElementById('clock').innerText = "CORE SYSTEM TIME // " + now.toLocaleTimeString();
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+    </script>
+
+</body>
+</html>
